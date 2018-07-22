@@ -37,7 +37,7 @@ switch($config['os']) {
 	default:
 	$config['take_picture']['cmd'] = 'sudo gphoto2 --capture-image-and-download --filename=%s images';
 	$config['take_picture']['msg'] = 'New file is in location';
-	$config['print']['cmd'] = 'sudo lp d- Canon_CP910 -o landscape fit-to-page %s';
+	$config['print']['cmd'] = 'sudo lp -d Canon_CP910 -o landscape -o media=Custom.100x148mm -o fit-to-page %s';
 	$config['print']['msg'] = '';
 	break;
 }
