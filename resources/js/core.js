@@ -287,6 +287,13 @@ var photoBooth = (function () {
     // print in gallery
     $(document).on('click touchstart', '.gal-print', function (e) {
         e.preventDefault();
+	    	$('.spinner').show();
+        $('.loading').text(L10N.busy);
+	loader.slideDown('slow', 'easeOutBounce', function () {
+        });
+	setTimeout(function () {
+            loader.slideUp('fast');
+        }, 5000); 
         var img = pswp.currItem.src;
         img = img.replace('images/', '');
         $.ajax({
@@ -382,6 +389,13 @@ var photoBooth = (function () {
 
     $('.printbtn').click(function (e) {
         e.preventDefault();
+	    	$('.spinner').show();
+        $('.loading').text(L10N.busy);
+	loader.slideDown('slow', 'easeOutBounce', function () {
+        });
+	setTimeout(function () {
+            loader.slideUp('fast');
+        }, 5000); 
     });
 
     $('.homebtn').click(function (e) {
